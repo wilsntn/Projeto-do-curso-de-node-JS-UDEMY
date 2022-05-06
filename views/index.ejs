@@ -1,0 +1,23 @@
+<%- include ('./partials/header.ejs'); %> 
+<body>
+    <%- include ('./partials/navbar.ejs'); %>
+    <div class="container">
+        <h1>Perguntas</h1>
+        <hr>
+        <a href="/pergunta" class="btn btn-dark">Fazer Pergunta</a>
+        <br>
+        <% perguntas.forEach(pergunta => { %> <!--loop dos cards-->
+            <br>
+            <div class="card">
+                <div class="card-body">
+                    <h3><%= pergunta.titulo %> </h3><!-- pega o titulo do que ta vindo do banco!-->
+                </div>
+                <div class="card-footer">
+                   <a href="/pergunta/<%= pergunta.id %>"><button class="btn btn-dark">Responder</button></a> <!--cada link para um id correspondente!-->
+                </div>
+            </div>
+        <% }) %>
+
+    </div>
+</body>
+<%- include ('./partials/footer.ejs'); %> 
